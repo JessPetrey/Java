@@ -6,7 +6,7 @@ public class AlfredTest {
         String testGreeting = alfredBot.basicGreeting();
         String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
         String testDateAnnouncement = alfredBot.dateAnnouncement();
-        
+        // make some test conversations
         String alexisTest = alfredBot.respondBeforeAlexis(
                             "Alexis! Play some low-fi beats."
                             );
@@ -19,11 +19,11 @@ public class AlfredTest {
         // Print the greetings to test.
         System.out.println(testGreeting);
         
-        // Uncomment these one at a time as you implement each method.
-        // System.out.println(testGuestGreeting);
-        // System.out.println(testDateAnnouncement);
-        // System.out.println(alexisTest);
-        // System.out.println(alfredTest);
-        // System.out.println(notRelevantTest);
+        // print the conversation responses
+        System.out.println(testGuestGreeting);
+        System.out.println(testDateAnnouncement);
+        System.out.println(alexisTest);
+        System.out.println(alfredTest);
+        System.out.println(notRelevantTest);
     }
 }
