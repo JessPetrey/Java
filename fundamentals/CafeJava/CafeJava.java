@@ -20,6 +20,9 @@ public class CafeJava {
         boolean isReadyOrder3 = false;
         boolean isReadyOrder4 = true;
 
+        System.out.println("changing prices");
+        dripCoffee = 1.95;
+        cappuccino = 2;
         // Cindhuri's order
         System.out.println("------------------------------");
         System.out.println(generalGreeting + customer1);
