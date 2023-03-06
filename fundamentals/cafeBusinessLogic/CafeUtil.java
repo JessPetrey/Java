@@ -38,7 +38,7 @@ public class CafeUtil {
         System.out.println("Please enter your name:");
         // get user input from terminal and store in 'userName'
         String userName = System.console().readLine();
-        System.out.printf("Hello, %s!", userName);
+        System.out.printf("Hello, %s! ", userName);
         System.out.println("There are " + customers.size() +" people in front of you.");
         customers.add(userName);
         System.out.println(customers);
