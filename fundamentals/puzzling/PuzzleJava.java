@@ -12,7 +12,15 @@ public class PuzzleJava {
         return tenRolls; // returns the array containing ten random integers
     }
 
-    public ArrayList<String> getRandomLetter() {
-        
+    public String getRandomLetter() {
+        Random randMachine = new Random();
+        int randomIndex = randMachine.nextInt(25);
+
+        ArrayList<String> alphabet = new ArrayList<String>();
+        for (int i = 'A'; i<= 'Z'; i++){  //ascii chars
+            char letter = (char) i;
+            alphabet.add(String.valueOf(letter));
+        }
+        return alphabet.get(randomIndex);
     }
 }

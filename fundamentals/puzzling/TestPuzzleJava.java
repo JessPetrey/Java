@@ -10,7 +10,7 @@ public class TestPuzzleJava {
         System.out.println(randomRolls);
 
         System.out.println("\n----- Get Random Letter Test -----");
-
+        System.out.println(generator.getRandomLetter());
     }
 
 }
