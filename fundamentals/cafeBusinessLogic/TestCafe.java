@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class TestCafe {
     public static void main(String[] args) {
-        
+        CafeUtil appTest = new CafeUtil();
     /* 
         You will need add 1 line to this file to create an instance 
         of the CafeUtil class. 
         Hint: it will need to correspond with the variable name used below..
     */
-    
+
         /* ============ App Test Cases ============= */
     
         System.out.println("\n----- Streak Goal Test -----");
