@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class CafeUtil {
 
     public int getStreakGoal() {
@@ -14,6 +16,31 @@ public class CafeUtil {
         return sum;
     }
 
-    // 
+    // get sum of all prices in a giiven array
+    public double getOrderTotal(double[] prices){
+        double total = 0;
+        for(double price : prices){
+            total += price;
+        }
+        return total;
+    }
 
+    // print each index and menu item
+    public void displayMenu(ArrayList<String> menuItems){
+        for(int i=0; i < menuItems.size(); i++){
+            String oneItem = menuItems.get(i);
+            System.out.println(i + " " + oneItem);
+        }
+    }
+    
+    // add customer method
+    public void addCustomer(ArrayList<String> customers){
+        System.out.println("Please enter your name:");
+        // get user input from terminal and store in 'userName'
+        String userName = System.console().readLine();
+        System.out.printf("Hello, %s!", userName);
+        System.out.println("There are " + customers.size() +" people in front of you.");
+        customers.add(userName);
+        System.out.println(customers);
+    }
 }
