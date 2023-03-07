@@ -4,10 +4,30 @@ import java.util.ArrayList;
 
 
 public class Order {
-    public String name;
-    public double total = 0;
-    public boolean ready = false;
-    public ArrayList<Item> items = new ArrayList<Item>();
+    private String name;
+    // private double total = 0;   do not include total as a member var
+    private boolean ready = false;
+    private ArrayList<Item> items;
+
+    // constructor - no params
+    public Order() {
+        this.name = "Guest";
+        this.items = new ArrayList<Item>();
+    }
+    // overloaded constructor
+    public Order(String name) {
+        this.name = name;
+    }
+
+    // getters and setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String isReady() { return ready; }
+    public void setIsReady(boolean ready) { this.ready = ready; }
+
+    public String getItems() { return items; }
+    public void setItems(ArrayList<Item> items) { this.items = items; }
 
 
 }
