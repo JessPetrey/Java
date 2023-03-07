@@ -44,7 +44,7 @@ public class Order {
     public void display(){
         System.out.println("Customer Name: " + this.name);
         for (Item oneItem : items) {
-            System.out.println(item.getName() + " - $: + oneItem.getPrice()");
+            System.out.println(oneItem.getName() + " - $:" + oneItem.getPrice());
         }
         System.out.println("Total: $" + getOrderTotal());
     }
