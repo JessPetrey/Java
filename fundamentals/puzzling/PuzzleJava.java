@@ -23,4 +23,20 @@ public class PuzzleJava {
         }
         return alphabet.get(randomIndex);
     }
+
+    public String generatePassword(){
+        String password = "";
+        while(password.length() < 8){
+            password = password + getRandomLetter();
+        }
+        return password;
+    }
+
+    public ArrayList<String> getNewPasswordSet(int stringLength) {
+        ArrayList<String> passwordSet = new ArrayList<String>();
+        while(passwordSet.size() < stringLength){
+            passwordSet.add(generatePassword());
+        }
+        return passwordSet;
+    }
 }
