@@ -1,0 +1,1 @@
+// item class should have string name and double price
