@@ -9,7 +9,7 @@ public class BankAccount {
 
     // constructor
     public BankAccount(){
-        numberOfAccounts++;
+        BankAccount.numberOfAccounts++;
     }
 
 // static methods
@@ -18,32 +18,32 @@ public class BankAccount {
 
 //  deposit into either type of account 
     public void deposit(String accountType, double amount){
-        totalAccountsBalance += amount;
+        BankAccount.totalAccountsBalance += amount;
         if(accountType.equals("checking")){
-            setCheckingBalance(checkingBalance + amount);
+            this.setCheckingBalance(this.checkingBalance + amount);
         } else {
-            setSavingsBalance(savingsBalance + amount);
+            this.setSavingsBalance(this.savingsBalance + amount);
         }
     }
 
 // withdraw method
     public void withdraw( String accountType, double amount) {
         if(accountType.equals("checking")){
-            if(checkingBalance >= amount){
-                totalAccountsBalance -= amount;
-                setCheckingBalance(checkingBalance - amount);
+            if(this.checkingBalance >= amount){
+                BankAccount.totalAccountsBalance -= amount;
+                this.setCheckingBalance(this.checkingBalance - amount);
             } 
         } else {
-            if(savingsBalance >= amount){
-                totalAccountsBalance -= amount;
-                setSavingsBalance(savingsBalance - amount);
+            if(this.savingsBalance >= amount){
+                BankAccount.totalAccountsBalance -= amount;
+                this.setSavingsBalance(this.savingsBalance - amount);
             }
         }
     }
 
     // get total from checking and savings
     public double getBothBalances(){
-        double total = getCheckingBalance() + getSavingsBalance();
+        double total = this.getCheckingBalance() + this.getSavingsBalance();
         return total;
     }
 
