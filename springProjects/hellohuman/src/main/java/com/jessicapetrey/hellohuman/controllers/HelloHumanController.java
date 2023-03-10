@@ -16,13 +16,13 @@ public class HelloHumanController {
 		if(nameInput == null) {
 			return "Hello Human";			
 		}
-		else if(lastName == null) {
+		if(lastName == null) {
 			return "Hello " + nameInput;
 		}
-		else if(repeatTimes.equals(null)) {
+		if(repeatTimes == null) {
 			return "Hello " + nameInput + " " + lastName;
 		}
-		String lastNameRepeated = lastName.repeat(repeatTimes);
-		return "Hello " + nameInput + " " + lastNameRepeated;
+		String greetingRepeated = "Hello " + nameInput + " " + lastName + " ";
+		return greetingRepeated.repeat(repeatTimes);
 	}
 }
