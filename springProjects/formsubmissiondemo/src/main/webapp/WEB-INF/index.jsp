@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h3>Login</h3>
-	<form action="/login" >
+	<form action="/login" method="POST">
 		<label>Email:</label>
 		<input type="text" name="email">
 		<label>Password:</label>

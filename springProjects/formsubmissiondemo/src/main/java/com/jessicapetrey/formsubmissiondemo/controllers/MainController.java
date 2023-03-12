@@ -19,7 +19,12 @@ public class MainController {
 			@RequestParam(value="password") String password, 
 			HttpSession session) {
 		session.setAttribute("email", email);
-		return "results.jsp";
+		return "redirect:/home";
 		
+	}
+	
+	@RequestMapping("/home")
+	public String home() {
+		return"results.jsp";
 	}
 }
