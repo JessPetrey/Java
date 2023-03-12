@@ -6,9 +6,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Form Practice</title>
 </head>
 <body>
-
+	<h3>Login</h3>
+	<form action="/login">
+		<label>Email:</label>
+		<input type="text" name="email">
+		<label>Password:</label>
+		<input type="password" name="password">
+		<input type="submit" value="login">
+	</form>
 </body>
 </html>
