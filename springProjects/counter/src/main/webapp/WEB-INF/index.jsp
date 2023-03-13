@@ -8,6 +8,6 @@
 <title>Welcome, again</title>
 </head>
 <body>
-	<h1>Welcome <c:out value="${name}"/>!</h1>
+	<h1>Welcome user!</h1>
 </body>
 </html>
