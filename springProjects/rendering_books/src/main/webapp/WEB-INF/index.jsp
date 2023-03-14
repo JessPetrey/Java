@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1><c:out value="${book.title }"/></h1>
+
 </body>
 </html>
