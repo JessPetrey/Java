@@ -63,6 +63,9 @@
             <artifactId>webjars-locator</artifactId>
             <version>0.46</version>
         </dependency>
+        
+        
+        
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>

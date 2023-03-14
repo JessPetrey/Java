@@ -11,6 +11,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -22,17 +23,17 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@NotNull
-	@Size(min = 5, max = 200)
+	@Size(min = 5, max = 200, message = "Title needs to be more than 3 characters")
+	@NotEmpty(message = "Book title should not be empty")
 	private String title;
-	@NotNull
-	@Size(min = 5, max = 200)
+	@Size(min = 5, max = 200, message = "Description should be more than 5 characters")
+	@NotEmpty(message = "Description should not be empty")
 	private String description;
-	@NotNull
-	@Size(min = 3, max = 40)
+	@Size(min = 3, max = 40, message = "Language should be more than 3 characters")
+	@NotEmpty(message = "Please provide the language")
 	private String language;
-	@NotNull
 	@Min(100)
+	@NotNull()
 	private Integer numberOfPages;
 
 	@Column(updatable = false)
@@ -52,19 +53,18 @@ public class Book {
 		this.description = description;
 		this.language = language;
 		this.numberOfPages = numberOfPages;
+
+	}
+
+	public Book(Long id, String title, String description, String language, Integer numberOfPages) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.language = language;
+		this.numberOfPages = numberOfPages;
 	}
 
 // get and set
-	@PrePersist
-	protected void onCreate() {
-		this.createdAt = new Date();
-	}
-	@PreUpdate
-	protected void onUpdate() {
-		this.updatedAt = new Date();
-	}
-	
-	
 	public String getTitle() {
 		return title;
 	}
@@ -100,5 +100,33 @@ public class Book {
 	public long getId() {
 		return id;
 	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+
 
 }
