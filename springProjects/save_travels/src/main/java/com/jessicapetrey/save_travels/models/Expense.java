@@ -15,23 +15,27 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "save-travels")
+@Table(name = "expenses")
 public class Expense {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Size(min = 3, max = 255, message = "Expense name needs to be more than 3 charaters")
+	@Size(min = 3, max = 40, message = "Expense name needs to be between 3 and 40 charaters")
 	@NotEmpty(message = "Please provide an expense name")
 	private String expense;
 
-	@Size(min = 3, max = 40, message = "Vendor name needs to be more than 3 charaters")
+	@Size(min = 3, max = 40, message = "Vendor name needs to be between 3 and 40 charaters")
 	@NotEmpty(message = "Please provide an vendor name")
 	private String vendor;
 
 	@Min(value = 0, message = "Amount should be greater than 0")
 	@NotEmpty(message = "Please provide an amount")
 	private Integer amount;
+
+	@Size(min = 3, max = 255, message = "Description needs to be between 3 and 255 characters")
+	@NotEmpty(message = "Please provide a description")
+	private String description;
 
 	@Column(updatable = false)
 	private Date createdAt;
@@ -42,20 +46,20 @@ public class Expense {
 
 	}
 
-	public Expense(String expense, String vendor, Integer amount) {
+	public Expense(String expense, String vendor, Integer amount, String description) {
 		this.expense = expense;
 		this.vendor = vendor;
 		this.amount = amount;
+		this.description = description;
 	}
 
-	public Expense(Long id, String expense, String vendor, Integer amount) {
+	public Expense(Long id, String expense, String vendor, Integer amount, String description) {
 		this.id = id;
 		this.expense = expense;
 		this.vendor = vendor;
 		this.amount = amount;
+		this.description = description;
 	}
-	
-	
 
 	public Long getId() {
 		return id;
@@ -87,6 +91,14 @@ public class Expense {
 
 	public void setAmount(Integer amount) {
 		this.amount = amount;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Date getCreatedAt() {

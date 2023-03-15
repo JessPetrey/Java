@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.headers {
+	font-family: 'Coming Soon', cursive;
+	color: #0066b2;
+}
+
+.bodyFont {
+	font-family: 'Roboto', sans-serif;
+}

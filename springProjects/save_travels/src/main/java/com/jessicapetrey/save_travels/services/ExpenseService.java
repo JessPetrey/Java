@@ -10,7 +10,7 @@ import com.jessicapetrey.save_travels.repositories.ExpenseRepository;
 
 @Service
 public class ExpenseService {
-	private static ExpenseRepository expenseRepo;
+	private final ExpenseRepository expenseRepo;
 
 	public ExpenseService(ExpenseRepository expenseRepo) {
 		this.expenseRepo = expenseRepo;
@@ -33,5 +33,7 @@ public class ExpenseService {
 		return expenseRepo.save(expense);
 	}
 	
-	
+	public void delete(Long id) {
+		expenseRepo.deleteById(id);
+	}
 }
