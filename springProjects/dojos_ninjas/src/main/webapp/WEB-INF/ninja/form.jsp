@@ -42,7 +42,7 @@
 				<form:input path="age" class="form-control" />
 				<form:errors path="age" class="text-danger" />
 			</div>
-			<input type="submit" value="add ninja" class="btn btn-warning my-3" />
+			<input type="submit" value="Create Ninja" class="btn btn-warning my-3" />
 		</form:form>
 	</div>
 </body>

@@ -19,11 +19,11 @@
 			modelAttribute="newDojo">
 			<div class="form-group">
 				<label>Name:</label>
-				<form:input path="name" />
+				<form:input path="name" class="form-control"/>
 				<form:errors path="name" class="text-danger" />
 			</div>
 
-			<input type="submit" value="Create" class="btn btn-warning" />
+			<input type="submit" value="Create" class="btn btn-warning my-3" />
 		</form:form>
 	</div>
 </body>

@@ -24,14 +24,15 @@ public class HomeController {
 		this.dojoServ = dojoServ;
 		this.ninjaServ = ninjaServ;
 	}
-	
+//	dashboard page
 	@GetMapping("/")
 	public String index(Model model) {
+		//	shows all the created dojos as links
 		model.addAttribute("allDojos", dojoServ.findAll());
 		return "main/index.jsp";
 	}
 	
-//	create dojo form and shows dojos created on the side
+//	create dojo form
 	@GetMapping("/dojos/new")
 	public String createDojo(@ModelAttribute("newDojo") Dojo newDojo) {
 		return "dojo/form.jsp";
@@ -39,19 +40,14 @@ public class HomeController {
 	
 //	create route - upon dojo form submit
 	@PostMapping("/dojos/process/new")
-	public String processNewDojo(@Valid @ModelAttribute("newDojo") Dojo newDojo, BindingResult result, Model model) {
+	public String processNewDojo(@Valid @ModelAttribute("newDojo") Dojo newDojo, BindingResult result) {
 		if(result.hasErrors()) {
-			//if errors, reload the form but still display the created dojos
-			model.addAttribute("dojos", dojoServ.findAll());
 			return "dojo/form.jsp";
 		}
 		dojoServ.create(newDojo);
 		return "redirect:/";
 	}
-	
-	
-	
-	
+
 	
 //	ninja form page
 	@GetMapping("/ninjas/new")

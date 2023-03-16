@@ -12,12 +12,12 @@
 </head>
 <body>
 	<div class="container my-5">
-		<h1>Dashboard</h1>
+		<h1 class="my-5">Dashboard</h1>
 		<a href="/dojos/new" class="btn btn-warning">Create Dojo</a>
 		<a href="/ninjas/new" class="btn btn-warning">Create Ninja</a>
 	</div>
 	<div class="container my-5">
-		<table>
+		<table class="table table-borderless">
 			<tbody>
 				<c:forEach items="${allDojos}" var="dojo">
 					<tr>
