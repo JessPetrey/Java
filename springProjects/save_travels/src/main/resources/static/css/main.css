@@ -13,3 +13,11 @@
 .bodyFont {
 	font-family: 'Roboto', sans-serif;
 }
+
+@media (min-width: 576px) {
+	.max-width{
+	width: 600px;
+	}
+	
+	
+}

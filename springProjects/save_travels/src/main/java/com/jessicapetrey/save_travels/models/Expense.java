@@ -12,6 +12,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -23,14 +24,14 @@ public class Expense {
 
 	@Size(min = 3, max = 40, message = "Expense name needs to be between 3 and 40 charaters")
 	@NotEmpty(message = "Please provide an expense name")
-	private String expense;
+	private String expenseName;
 
 	@Size(min = 3, max = 40, message = "Vendor name needs to be between 3 and 40 charaters")
-	@NotEmpty(message = "Please provide an vendor name")
+	@NotEmpty(message = "Please provide a vendor name")
 	private String vendor;
 
 	@Min(value = 0, message = "Amount should be greater than 0")
-	@NotEmpty(message = "Please provide an amount")
+	@NotNull(message = "Please provide an amount")
 	private Integer amount;
 
 	@Size(min = 3, max = 255, message = "Description needs to be between 3 and 255 characters")
@@ -46,16 +47,16 @@ public class Expense {
 
 	}
 
-	public Expense(String expense, String vendor, Integer amount, String description) {
-		this.expense = expense;
+	public Expense(String expenseName, String vendor, Integer amount, String description) {
+		this.expenseName = expenseName;
 		this.vendor = vendor;
 		this.amount = amount;
 		this.description = description;
 	}
 
-	public Expense(Long id, String expense, String vendor, Integer amount, String description) {
+	public Expense(Long id, String expenseName, String vendor, Integer amount, String description) {
 		this.id = id;
-		this.expense = expense;
+		this.expenseName = expenseName;
 		this.vendor = vendor;
 		this.amount = amount;
 		this.description = description;
@@ -69,12 +70,12 @@ public class Expense {
 		this.id = id;
 	}
 
-	public String getExpense() {
-		return expense;
+	public String getExpenseName() {
+		return expenseName;
 	}
 
-	public void setExpense(String expense) {
-		this.expense = expense;
+	public void setExpenseName(String expenseName) {
+		this.expenseName = expenseName;
 	}
 
 	public String getVendor() {
@@ -119,7 +120,6 @@ public class Expense {
 
 	@PrePersist
 	protected void onCreate() {
-		System.out.println("testing");
 		this.createdAt = new Date();
 	}
 

@@ -32,6 +32,7 @@ public class ExpenseController {
 	@GetMapping("")
 	public String index(Model model) {
 		model.addAttribute("allExpenses", expenseService.getAll());
+		model.addAttribute("expense", new Expense());
 		return "/saveTravelsViews/index.jsp";
 	}
 	
@@ -44,8 +45,9 @@ public class ExpenseController {
 	
 	//create one new
 	@PostMapping("/process/new")
-	public String processNewExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result) {
+	public String processNewExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result, Model model) {
 		if(result.hasErrors()) {
+			model.addAttribute("allExpenses", expenseService.getAll());
 			return "/saveTravelsViews/index.jsp";
 		}
 		expenseService.create(expense);
@@ -64,7 +66,7 @@ public class ExpenseController {
 		if(result.hasErrors()) {
 			return "/saveTravelsViews/edit.jsp";
 		}
-		expenseService.create(expense);
+		expenseService.update(expense);
 		return "redirect:/expenses";
 	}
 	
