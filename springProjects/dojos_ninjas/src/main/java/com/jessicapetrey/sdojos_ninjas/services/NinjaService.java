@@ -30,14 +30,5 @@ public class NinjaService {
 	public Ninja create(Ninja ninja) {
 		return ninjaRepo.save(ninja);
 	}
-	
-	//update
-	public Ninja update(Ninja ninja) {
-		return ninjaRepo.save(ninja);
-	}
-	
-	//delete 
-	public void delete(Long id) {
-		ninjaRepo.deleteById(id);
-	}
+
 }

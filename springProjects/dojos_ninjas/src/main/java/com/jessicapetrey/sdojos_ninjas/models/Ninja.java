@@ -25,11 +25,11 @@ public class Ninja {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Size(min = 5, max = 40)
+	@Size(min = 2, max = 40)
 	@NotEmpty(message = "First name is required!")
 	private String firstName;
 
-	@Size(min = 5, max = 40)
+	@Size(min = 2, max = 40)
 	@NotEmpty(message = "Last name is required!")
 	private String lastName;
 

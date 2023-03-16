@@ -21,10 +21,16 @@ public class DojoService {
 		return (List<Dojo>) dojoRepo.findAll();
 	}
 
-//	get one
+//	get one by id
 	public Dojo getOne(Long id) {
-		Optional<Dojo> Dojo = dojoRepo.findById(id);
-		return Dojo.isPresent() ? Dojo.get() : null;
+		Optional<Dojo> potentialDojo = dojoRepo.findById(id);
+		return potentialDojo.isPresent() ? potentialDojo.get() : null;
+	}
+	
+//	get one by name
+	public Dojo getOne(String name) {
+		Optional<Dojo> potentialDojo = dojoRepo.findByName(name);
+		return potentialDojo.isPresent() ? potentialDojo.get() : null;
 	}
 
 	// create
@@ -32,13 +38,4 @@ public class DojoService {
 		return dojoRepo.save(Dojo);
 	}
 
-	// update
-	public Dojo update(Dojo Dojo) {
-		return dojoRepo.save(Dojo);
-	}
-
-	// delete
-	public void delete(Long id) {
-		dojoRepo.deleteById(id);
-	}
 }

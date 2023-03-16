@@ -24,7 +24,7 @@ public class Dojo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Size(min = 5, max = 40)
+	@Size(min = 3, max = 40, message="must be at least 3 characters")
 	@NotEmpty(message = "Name is required!")
 	private String name;
 
