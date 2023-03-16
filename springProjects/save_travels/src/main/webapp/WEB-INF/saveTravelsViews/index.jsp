@@ -19,7 +19,7 @@
 </head>
 <body class="bodyFont">
 	<div class="container my-5 max-width">
-	<h1 class="headers" >Save Travels</h1>
+	<h1>Save Travels</h1>
 		<table class="table">
 			<thead class="border-bottom border-3">
 				<tr>
@@ -32,10 +32,10 @@
 			<tbody>
 				<c:forEach var="oneExpense" items="${allExpenses}">
 					<tr>
-						<td><a href="/expenses/${oneExpense.id}"><c:out value="${oneExpense.expenseName}" /></a></td>
+						<td><a href="/expenses/${oneExpense.id}" class="text-decoration-none"><c:out value="${oneExpense.expenseName}"/></a></td>
 						<td><c:out value="${oneExpense.vendor}" /></td>
 						<td>${oneExpense.amount}</td>
-						<td><a href="/expenses/edit/${oneExpense.id}">Edit</a></td>
+						<td><a href="/expenses/edit/${oneExpense.id}" class="btn btn-info">Edit</a></td>
 						<td>
 							<form action="/expenses/delete/${oneExpense.id}" method="post">
 								<input type="hidden" name="_method" value="delete">
@@ -48,7 +48,7 @@
 		</table>
 	</div>
 	<div class="container my-5 max-width">
-		<h3 class="headers" >Add an expense:</h3>
+		<h3>Add an expense:</h3>
 		<form:form action="/expenses/process/new" method="post" modelAttribute="expense">
 			<div class="form-group">
 				<label>Expense Name:</label>

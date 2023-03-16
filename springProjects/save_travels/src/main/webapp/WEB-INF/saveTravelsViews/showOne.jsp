@@ -38,7 +38,7 @@
 				</tr>
 				<tr>
 					<td>Amount:</td>
-					<td>${oneExpense.amount}</td>
+					<td>$${oneExpense.amount}</td>
 				</tr>
 			</tbody>
 		</table>

@@ -22,7 +22,7 @@
 <body class="bodyFont">
 	<div class="container my-5 max-width">
 		<div class=" my-5 d-flex justify-content-between align-items-center">
-			<h1 class="headers">Edit Expense</h1>
+			<h1 class="editColor">Edit Expense</h1>
 			<a href="/expenses">Go Back</a>
 		</div>
 		<form:form action="/expenses/process/${expense.id}" method="post" modelAttribute="expense">
