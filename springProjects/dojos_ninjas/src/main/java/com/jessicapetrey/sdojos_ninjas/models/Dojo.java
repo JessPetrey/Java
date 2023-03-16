@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "dojos")
@@ -21,10 +23,15 @@ public class Dojo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
+	@Size(min = 5, max = 40)
+	@NotEmpty(message = "Name is required!")
 	private String name;
+
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
+
 	@OneToMany(mappedBy = "dojo", fetch = FetchType.LAZY)
 	private List<Ninja> ninjas;
 

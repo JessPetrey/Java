@@ -13,6 +13,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "ninjas")
@@ -20,9 +24,19 @@ public class Ninja {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
+	@Size(min = 5, max = 40)
+	@NotEmpty(message = "First name is required!")
 	private String firstName;
+
+	@Size(min = 5, max = 40)
+	@NotEmpty(message = "Last name is required!")
 	private String lastName;
+
+	@Min(1)
+	@NotNull(message = "Age is required!")
 	private int age;
+
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
@@ -30,9 +44,7 @@ public class Ninja {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "dojo_id")
 	private Dojo dojo;
-	
 
-	
 	public Ninja() {
 
 	}
