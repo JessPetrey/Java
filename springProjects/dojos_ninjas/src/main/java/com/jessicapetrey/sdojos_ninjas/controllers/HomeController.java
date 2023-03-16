@@ -52,6 +52,7 @@ public class HomeController {
 //	ninja form page
 	@GetMapping("/ninjas/new")
 	public String createNinja(@ModelAttribute("newNinja") Ninja newNinja, Model model) {
+		//  this is needed to populate the dropdown with the dojos
 		model.addAttribute("allDojos", dojoServ.findAll());
 		return "ninja/form.jsp";
 	}
@@ -60,6 +61,7 @@ public class HomeController {
 	@PostMapping("/ninjas/process/new")
 	public String processNewNinja(@Valid @ModelAttribute("newNinja") Ninja newNinja, BindingResult result, Model model) {
 		if(result.hasErrors()) {
+			// if errors, reload, still need the dojos
 			model.addAttribute("allDojos", dojoServ.findAll());
 			return "ninja/form.jsp";
 		}
