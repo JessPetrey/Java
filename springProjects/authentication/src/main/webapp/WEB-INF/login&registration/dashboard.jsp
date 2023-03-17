@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <title>Dashboard</title>
 </head>
-<body>
-	<h1>Welcome, <c:out value="${session.userName}"></c:out></h1>
+<body class="containe m-5">
+	<h1>Welcome, <c:out value="${user.userName}"></c:out></h1>
+	<p>This is your dashboard. Nothing to see here yet.</p>
 	
 	<a href="/users/logout" class="btn btn-outline-danger">Logout</a>
 </body>

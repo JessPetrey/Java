@@ -26,11 +26,11 @@ public class UserController {
 	
 	// Bind empty User and LoginUser objects to the JSP
 	// to capture the form input
-	@GetMapping("/login/register")
+	@GetMapping("")
 	public String loginReg(@ModelAttribute("newUser") User user,
 			@ModelAttribute("loginUser") LoginUser loginUser, HttpSession session) {
 		if(session.getAttribute("user_id") != null) {
-			return "redirect:/";
+			return "redirect:/welcome";
 		}
 		return "login&registration/index.jsp";
 	}
@@ -51,7 +51,7 @@ public class UserController {
 	     // in other words, log them in.
 	     
 	     session.setAttribute("user_id", registeredUser.getId());
-	     return "redirect:/";
+	     return "redirect:/welcome";
 	 }
 	 
 	 @PostMapping("/login")
@@ -70,7 +70,7 @@ public class UserController {
 	     // TO-DO Later: Store their ID from the DB in session, 
 	     // in other words, log them in.
 	     session.setAttribute("user_id", returningUser.getId());
-	     return "redirect:/";
+	     return "redirect:/welcome";
 	 }
 	 
 	 
@@ -78,7 +78,7 @@ public class UserController {
 	 @GetMapping("/logout")
 	 public String logout(HttpSession session) {
 		 session.invalidate();
-		 return "redirect:/users/login/register";
+		 return "redirect:/users";
 	 }
 	 
 }

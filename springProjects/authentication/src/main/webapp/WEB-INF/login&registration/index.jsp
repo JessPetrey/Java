@@ -22,22 +22,22 @@
 					modelAttribute="newUser">
 					<div class="form-group">
 						<label>User Name</label>
-						<form:input path="userName" class="form-control" />
+						<form:input path="userName" type="text" class="form-control" />
 						<form:errors path="userName" class="text-danger" />
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<form:input path="email" class="form-control" />
+						<form:input path="email" type="email" class="form-control" />
 						<form:errors path="email" class="text-danger" />
 					</div>
 					<div class="form-group">
 						<label>Password</label>
-						<form:input path="password" class="form-control" />
+						<form:input path="password" type="password" class="form-control" />
 						<form:errors path="password" class="text-danger" />
 					</div>
 					<div class="form-group">
 						<label>Confirm Password</label>
-						<form:input path="confirm" class="form-control" />
+						<form:input path="confirm" type="password" class="form-control" />
 						<form:errors path="confirm" class="text-danger" />
 					</div>
 
@@ -51,12 +51,12 @@
 						modelAttribute="loginUser">
 						<div class="form-group">
 							<label>Email</label>
-							<form:input path="email" class="form-control" />
+							<form:input path="email" type="email" class="form-control" />
 							<form:errors path="email" class="text-danger" />
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<form:input path="password" class="form-control" />
+							<form:input path="password" type="password" class="form-control" />
 							<form:errors path="password" class="text-danger" />
 						</div>
 
