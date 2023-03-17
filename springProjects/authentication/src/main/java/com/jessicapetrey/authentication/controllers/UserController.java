@@ -74,5 +74,11 @@ public class UserController {
 	 }
 	 
 	 
+//	 remove user's id from session
+	 @GetMapping("/logout")
+	 public String logout(HttpSession session) {
+		 session.invalidate();
+		 return "redirect:/users/login/register";
+	 }
 	 
 }

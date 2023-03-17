@@ -14,11 +14,11 @@ public class HomeController {
 
  
  @GetMapping("/")
- public String index(HttpSession session, Model model) {
+ public String index(HttpSession session) {
 	 if(session.getAttribute("user_id") == null) {
 		 return "redirect:/users/login/register";
 	 }
-	 model.addAttribute("user");
+	 
      return "login&registration/dashboard.jsp";
  }
  
