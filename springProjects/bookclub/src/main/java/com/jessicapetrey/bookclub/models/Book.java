@@ -47,20 +47,6 @@ public class Book {
 
 	}
 
-	public Book(String title, String description, String author) {
-		this.title = title;
-		this.description = description;
-		this.author = author;
-
-	}
-
-	public Book(Long id, String title, String description, String author) {
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.author = author;
-	}
-
 // get and set
 	public long getId() {
 		return id;
