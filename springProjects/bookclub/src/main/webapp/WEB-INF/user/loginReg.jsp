@@ -6,19 +6,19 @@
 <head>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Read Share</title>
 </head>
 <body>
 	<div class="container my-5">
 		<div class="my-5">
-			<h1 class="text-info my-3">Welcome!</h1>
-			<h3>Join our growing communtiy.</h3>
+			<h1 class="text-info my-3">Book Club</h1>
+			<h3>A place for friends to share thoughts on books.</h3>
 		</div>
 		<div class="d-flex">
 
 			<div class="col-sm">
 				<h1>Register</h1>
-				<form:form action="/users/register" method="post"
+				<form:form action="/users/register/process" method="post"
 					modelAttribute="newUser">
 					<div class="form-group">
 						<label>User Name</label>
