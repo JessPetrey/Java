@@ -112,7 +112,6 @@ public class User {
 
 	@PrePersist
 	protected void onCreate() {
-		System.out.println("testing");
 		this.createdAt = new Date();
 	}
 
