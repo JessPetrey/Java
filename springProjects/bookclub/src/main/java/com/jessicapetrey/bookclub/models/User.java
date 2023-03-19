@@ -1,4 +1,4 @@
-package com.jessicapetrey.authentication.models;
+package com.jessicapetrey.bookclub.models;
 
 import java.util.Date;
 
@@ -42,13 +42,15 @@ public class User {
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
-
-//	constructor
+	
 
 	public User() {
-	}
 
-//	get and set
+	}
+	
+	
+	
+
 	public Long getId() {
 		return id;
 	}
@@ -87,6 +89,10 @@ public class User {
 
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 
 	public Date getUpdatedAt() {
