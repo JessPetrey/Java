@@ -20,11 +20,19 @@
 		</div>
 		<div>
 			<h4>
-				<c:out
-					value="${book.postedBy.userName} read ${book.title} by ${book.author}." />
-			</h4>
-			<h4>
-				<c:out value="Here are ${book.postedBy.userName}'s thoughts:" />
+				<c:if test="${sessionScope.user_id == book.postedBy.id}">
+					<c:out value="You read ${book.title} by ${book.author}." />
+					<h4>
+						<c:out value="Here are your thoughts:" />
+					</h4>
+				</c:if>
+				<c:if test="${sessionScope.user_id != book.postedBy.id}">
+					<c:out
+						value="${book.postedBy.userName} read ${book.title} by ${book.author}." />
+					<h4>
+						<c:out value="Here are ${book.postedBy.userName}'s thoughts:" />
+					</h4>
+				</c:if>
 			</h4>
 		</div>
 		<div class="m-4">
@@ -33,14 +41,17 @@
 				<c:out value="${book.description}" />
 			</p>
 			<hr class="my-5">
-			<div class="d-flex justify-content-end">
-				<a href="/books/${book.id}/edit"
-					class="btn btn-outline-warning mx-4">edit</a>
-				<form action="/books/${book.id}/delete" method="post">
-					<input type="hidden" name="_method" value="delete" /> <input
-						type="submit" value="delete" class="btn btn-outline-danger" />
-				</form>
-			</div>
+			<!-- logged in user can edit and delete their own books, but no one else's -->
+			<c:if test="${sessionScope.user_id == book.postedBy.id}">
+				<div class="d-flex justify-content-end">
+					<a href="/books/${book.id}/edit"
+						class="btn btn-outline-warning mx-4">edit</a>
+					<form action="/books/${book.id}/delete" method="post">
+						<input type="hidden" name="_method" value="delete" /> <input
+							type="submit" value="delete" class="btn btn-outline-danger" />
+					</form>
+				</div>
+			</c:if>
 		</div>
 	</div>
 </body>

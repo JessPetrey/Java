@@ -28,7 +28,7 @@ public class Book {
 	@Size(min = 2, max = 40, message = "Author name should be betwwen 2 and 40 characters")
 	@NotEmpty(message = "Please provide the Author name")
 	private String author;
-	@Size(min = 5, max = 200, message = "Description should be betwwen 5 and 200 characters")
+	@Size(min = 5, max = 600, message = "Description should be betwwen 5 and 600 characters")
 	@NotEmpty(message = "Description should not be empty")
 	private String description;
 	
